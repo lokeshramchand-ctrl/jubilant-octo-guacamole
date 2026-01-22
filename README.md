@@ -322,6 +322,19 @@ If extended further, improvements would include:
 
 ---
 
+## Failure Modes & Safeguards
+
+This system explicitly handles common agent failure cases:
+
+- LLM returns invalid JSON → retried with schema-enforced prompt
+- LLM hallucination → deterministic guardrails override
+- Tool execution failure → logged and downgraded to LOG action
+- Ambiguous input → default MEDIUM risk with human review
+
+This mirrors real-world constraints where agents must fail safely.
+
+---
+
 ## Why this project exists
 
 This project was built to demonstrate:
@@ -332,6 +345,20 @@ This project was built to demonstrate:
 * How observability and reliability should be treated as first-class features
 
 It is not a toy chatbot — it is a **miniature, real-world agent system**.
+
+---
+
+## How This Would Extend in a Real System
+
+If extended for a production supply-chain platform like Lumari:
+
+- Replace SQLite with Postgres + event indexing
+- Integrate Slack / email / webhook tools
+- Add multi-tenant agent isolation
+- Introduce agent confidence scoring
+- Stream agent decisions to observability tools
+
+This project intentionally stops before those layers.
 
 ---
 
