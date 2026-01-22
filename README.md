@@ -305,5 +305,6 @@ It is not a toy chatbot — it is a **miniature, real-world agent system**.
 ## Author
 
 Built by **Lokesh**
+
 Focused on full-stack engineering and AI agent systems.
 
