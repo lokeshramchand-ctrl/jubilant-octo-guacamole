@@ -335,6 +335,20 @@ It is not a toy chatbot — it is a **miniature, real-world agent system**.
 
 ---
 
+## How This Would Extend in a Real System
+
+If extended for a production supply-chain platform like Lumari:
+
+- Replace SQLite with Postgres + event indexing
+- Integrate Slack / email / webhook tools
+- Add multi-tenant agent isolation
+- Introduce agent confidence scoring
+- Stream agent decisions to observability tools
+
+This project intentionally stops before those layers.
+
+---
+
 ## Author
 
 Built by **Lokesh**
